@@ -15,8 +15,8 @@ public class KafkaConfig {
         return TopicBuilder
                 .name("product-created-events-topic")
                 .partitions(3)
-                .replicas(3) // поменяем когда запустим 3 сервера кафки в кластере
-                .configs(Map.of("min.insync.replicas", "2")) // 2 сервера должны быть в синхроне , это тоже когда будет 3 сервера кафки
+                .replicas(1) // поменяем когда запустим 3 сервера кафки в кластере
+                .configs(Map.of("min.insync.replicas", "1")) // 2 сервера должны быть в синхроне , это тоже когда будет 3 сервера кафки
                 .build();
     }
 }
